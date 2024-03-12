@@ -4,7 +4,7 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.ta
 RUN tar -xvf apache-tomcat-8.5.99.tar.gz -C /opt
 WORKDIR /opt/apache-tomcat-8.5.99
 COPY context.xml conf/context.xml 
-COPY student.war apache-tomcat-8.5.99/webapps/ . 
-COPY mysql-connector.jar apache-tomcat-8.5.99/lib/ .
+COPY student.war webapps/student.war
+COPY mysql-connector.jar lib/mysql-connector.jar 
 ENTRYPOINT [ "bin/catalina.sh" ]
 CMD [ "start" ]
